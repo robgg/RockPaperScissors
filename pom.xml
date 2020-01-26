@@ -16,12 +16,14 @@
                     <source>8</source>
                     <target>8</target>
                 </configuration>
+                <version>3.8.1</version>
             </plugin>
         </plugins>
     </build>
 
     <properties>
         <exec.mainClass>de.whoa.RockPaperScissorsRunner</exec.mainClass>
+        <encoding>UTF-8</encoding>
     </properties>
 
     <dependencies>
