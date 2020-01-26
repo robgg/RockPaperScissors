@@ -12,4 +12,4 @@ A couple of thoughts on the implementation:
 
 * For a lack of requirement, a game instance is not designed to be persisted, or 'recognized' in any way. This would likely not be the case for anything but demonstration code.
 
-* For the same reason, factory methods, repositories, etc. have been omitted.
+* For the same reason, factory methods, repositories, etc. have been omitted. The static import of enum Bet in the tests is solely to enhance readability and would not occur in any project slightly more complex.
