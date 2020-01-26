@@ -4,7 +4,6 @@ import de.whoa.RockPaperScissors.Bet;
 import de.whoa.RockPaperScissors.Game;
 import de.whoa.RockPaperScissors.Outcome;
 
-import java.util.EnumMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.stream.Collectors;
