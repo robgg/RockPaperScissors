@@ -38,19 +38,19 @@ public class TestGame {
         underTest.eval();
         assertThat(underTest.getOutcome(), is(equalTo(Outcome.BWINS)));
         //assertThat the bet yields the same result
-        assertThat(underTest.getOutcome() == Outcome.BWINS, is(equalTo(ROCK.beats(PAPER))));
+        assertThat(underTest.getOutcome() == Outcome.BWINS, is(equalTo(PAPER.beats(ROCK))));
 
         underTest = new Game(PAPER, SCISSORS);
         underTest.eval();
         assertThat(underTest.getOutcome(), is(equalTo(Outcome.BWINS)));
         //assertThat the bet yields the same result
-        assertThat(underTest.getOutcome() == Outcome.BWINS, is(equalTo(PAPER.beats(SCISSORS))));
+        assertThat(underTest.getOutcome() == Outcome.BWINS, is(equalTo(SCISSORS.beats(PAPER))));
 
         underTest = new Game(SCISSORS, ROCK);
         underTest.eval();
         assertThat(underTest.getOutcome(), is(equalTo(Outcome.BWINS)));
         //assertThat the bet yields the same result
-        assertThat(underTest.getOutcome() == Outcome.BWINS, is(equalTo(SCISSORS.beats(ROCK))));
+        assertThat(underTest.getOutcome() == Outcome.BWINS, is(equalTo(ROCK.beats(SCISSORS))));
     }
 
     @Test
@@ -60,19 +60,22 @@ public class TestGame {
         underTest.eval();
         assertThat(underTest.getOutcome(), is(equalTo(Outcome.DRAW)));
         //assertThat the bet yields the same result
-        assertThat(underTest.getOutcome() == Outcome.DRAW, is(equalTo(ROCK.beats(ROCK))));
+        assertThat(underTest.getOutcome() == Outcome.AWINS || underTest.getOutcome() == Outcome.BWINS,
+                is(equalTo(ROCK.beats(ROCK))));
 
         underTest = new Game(PAPER, PAPER);
         underTest.eval();
         assertThat(underTest.getOutcome(), is(equalTo(Outcome.DRAW)));
         //assertThat the bet yields the same result
-        assertThat(underTest.getOutcome() == Outcome.DRAW, is(equalTo(PAPER.beats(PAPER))));
+        assertThat(underTest.getOutcome() == Outcome.AWINS || underTest.getOutcome() == Outcome.BWINS,
+                is(equalTo(PAPER.beats(PAPER))));
 
         underTest = new Game(SCISSORS, SCISSORS);
         underTest.eval();
         assertThat(underTest.getOutcome(), is(equalTo(Outcome.DRAW)));
         //assertThat the bet yields the same result
-        assertThat(underTest.getOutcome() == Outcome.DRAW, is(equalTo(SCISSORS.beats(SCISSORS))));
+        assertThat(underTest.getOutcome() == Outcome.AWINS || underTest.getOutcome() == Outcome.BWINS,
+                is(equalTo(SCISSORS.beats(SCISSORS))));
     }
 
 }
